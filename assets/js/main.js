@@ -31,20 +31,16 @@ function scrollAnimation() {
     else if (scroll >= 1100) {
         console.log('1100');
     }
+    else if (scroll >= 1050) {
+        document.getElementById('red').classList.add("red");
+    }
     else if (scroll >= 1000) {
-        console.log('1000');
-    }
-    else if (scroll >= 900) {
-        console.log('900');
-    }
-    else if (scroll >= 800) {
-        console.log('800');
-    }
-    else if (scroll >= 700) {
+        document.getElementById('red').classList.add("red");
         document.getElementById('p-1').classList.remove("opacity-0");
+        document.getElementById('article-title').classList.add("opacity-0");
         console.log('700');
     }
-    else if (scroll >= 600) {
+    else if (scroll >= 800) {
         document.getElementById('p-1').classList.add("opacity-0");
         document.getElementById('article-title').classList.remove("opacity-0");
         document.querySelector('.Victim-container').classList.add("opacity-0");
