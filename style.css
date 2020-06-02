@@ -1,0 +1,70 @@
+body {
+    margin: 0 !important;
+    height: 200em;
+    background-color: black;
+}
+
+@font-face {
+    font-family: Futura;
+    src: url("/assets/fonts/Futura Book font.ttf");
+}
+
+.cover {
+    width: 100%;
+    margin-top: -2.5em;
+    position: absolute;
+    object-fit: cover;
+    z-index: 5;
+}
+
+@keyframes imageFade {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.victim-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.victims-img {
+    filter: grayscale(100%);
+    width: 33%;
+    height: 22.5em;
+    object-fit: cover;
+}
+
+.victims-img:nth-child(odd) {
+    animation: imageFade 8s infinite reverse;
+    animation-delay: 2s;
+}
+
+.victims-img:nth-child(even) {
+    animation: imageFade 10s infinite;
+}
+
+.main-title {
+    transition: all 3s ease;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    color: white;
+    font-size: 3em;
+    font-family: Futura;
+}
+
+.p-1 {
+    transition: all 3s ease;
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    background-color: white;
+    font-family: Futura;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
