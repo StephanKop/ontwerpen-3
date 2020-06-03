@@ -1,6 +1,6 @@
 body {
     margin: 0 !important;
-    height: 200em;
+    min-height: 200em;
     background-color: black;
 }
 
@@ -36,7 +36,7 @@ body {
     filter: grayscale(100%);
     padding: 0;
     margin: 0;
-    width: 33%;
+    width: 33.1%;
     /*max-height: 23em;*/
     height: 50vh;
     object-fit: cover;
@@ -61,7 +61,7 @@ body {
     color: white;
     font-size: 2.7em;
     font-family: Futura;
-    border: 5px solid red;
+    border: 5px solid #f8ef2a;
     padding: 1em 1em 1em 1em;
 }
 
@@ -71,8 +71,16 @@ body {
     flex-direction: row;
     padding: 1em;
     /*background-color: white;*/
-    color: white;
-    font-family: Futura;
+    /*color: white;*/
+    color: black;
+    font-family: "Georgia",serif;
+}
+
+.text-block {
+    background-color: white;
+    padding: 1em;
+    margin: 0em 1em;
+    height: 8em;
 }
 
 .opacity-0 {
@@ -83,14 +91,162 @@ body {
 .red {
     transition: 6s ease;
     opacity: 1 !important;
-    color: red !important;
+    color: #f8ef2a !important;
 }
 
 .floyd {
-    color: black;
-    opacity: 0;
-    padding-top: 2em;
-    transition: all 5s ease;
+    /*color: black;*/
+    /*opacity: 0;*/
+    /*padding-top: 2em;*/
+    /*transition: all 5s ease;*/
+    /*text-align: center;*/
+    /*font-size: 2em;*/
+    margin-top: -2.2em;
+    margin-left: 22em;
+    font-family: "Georgia",serif;
+}
+
+.optelsom-container {
+    transition: all 1s ease;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10em;
+}
+
+.optelsom-title {
+    border: 5px solid #f8ef2a;
+    padding: 1em 1em 1em 1em;
+    font-family: Futura;
     text-align: center;
-    font-size: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15em;
+    color: white;
+    margin-bottom: 5em;
+}
+
+.optelsom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: Futura;
+}
+
+.optelsom p {
+    color: white;
+    max-width: 10em;
+    font-size: 1.2em;
+}
+
+.plus {
+    margin-top: 0em;
+    font-size: 3em !important;
+    color: #f8ef2a !important;
+    font-weight: bold;
+}
+
+.riot {
+    transition: all 1s ease;
+    margin-top: 10em;
+    /*position: sticky;*/
+    top: 0;
+}
+
+.riot p {
+    position: absolute;
+    right: 0;
+    /*padding-right: 2em;*/
+    /*padding-top: 2em;*/
+    padding: 1em;
+    margin: 1em 1em 1em 1em;
+    background-color: white;
+    color: black;
+    width: 20em;
+    font-size: 1.2em;
+    /*color: white;*/
+    /*font-family: Futura;*/
+    font-family: "Georgia",serif;
+}
+
+.riot img {
+    transition: all 1s ease;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.sticky {
+    position: sticky;
+}
+
+.blm-container {
+    transition: all 1s ease;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10em;
+    font-family: "Georgia",serif;
+}
+
+.blm-container-intro {
+    display: flex;
+    flex-direction: row;
+}
+
+.blm-container-intro svg {
+    height: 100vh;
+}
+
+.blm-container-intro-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.blm-container-intro p {
+    background-color: white;
+    padding: 1em;
+    margin: 1em 1em;
+    opacity: 0;
+    /*max-height: 5em;*/
+}
+
+.blm-text-block-1 {
+    transition: all 1s ease;
+}
+
+.blm-text-block-2 {
+    transition: all 3s ease;
+}
+
+.blm-text-block-3 {
+    transition: all 6s ease;
+}
+
+.blm-text-block-4 {
+    transition: all 9s ease;
+}
+
+.visible-text {
+    opacity: 1 !important;
+}
+
+.demonstratie-container {
+    transition: all 1s ease;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10em;
+}
+
+.demonstratie-container p {
+    padding: 1em;
+    margin: 1em 1em;
+    background-color: white;
+}
+
+.demonstratie-container-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.demonstratie-container img {
+    border-radius: 20px;
 }
