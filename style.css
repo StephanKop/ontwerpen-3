@@ -23,6 +23,11 @@ body {
     100% {opacity: 1;}
 }
 
+@keyframes smoothUp {
+    0% {transform: translateY(0em);}
+    100% {transform: translateY(-1em);}
+}
+
 .victim-container {
     transition: all 3s ease;
     display: flex;
@@ -86,6 +91,11 @@ body {
 .opacity-0 {
     transition: all 3s ease;
     opacity: 0;
+}
+
+.smoothUpTransition {
+    animation: smoothUp 1s ease;
+    animation-fill-mode: forwards;
 }
 
 .red {
@@ -249,4 +259,24 @@ body {
 
 .demonstratie-container img {
     border-radius: 20px;
+}
+
+.sticky-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10em;
+}
+
+.sticky-text {
+    color: white;
+}
+
+.sticky-text p {
+    margin-bottom: 20em;
+}
+
+.sticky-img {
+    height: 100vh;
+    position: sticky;
+    top: 0;
 }

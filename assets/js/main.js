@@ -46,12 +46,14 @@ function scrollAnimation() {
     else if (scroll >= 1000) {
         document.getElementById('red').classList.add("red");
         document.getElementById('p-1').classList.remove("opacity-0");
+        document.getElementById('p-1').classList.add("smoothUpTransition");
         document.getElementById('article-title').classList.add("opacity-0");
         console.log('700');
     }
     else if (scroll >= 800) {
         document.getElementById('p-1').classList.add("opacity-0");
         document.getElementById('article-title').classList.remove("opacity-0");
+        document.getElementById('article-title').classList.add("smoothUpTransition");
         document.querySelector('.Victim-container').classList.add("opacity-0");
         console.log('600');
     }
