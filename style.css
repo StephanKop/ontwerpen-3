@@ -418,7 +418,7 @@ section {
 .sticky-text {
     color: white;
     height: 100vh;
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
     margin-top: 10vh;
 }
@@ -489,7 +489,7 @@ section {
 .patrice-text-side {
     transition: all 1s ease;
     flex-direction: column;
-    overflow-y: scroll;
+    overflow-y: hidden;
     height: 100vh;
 }
 
