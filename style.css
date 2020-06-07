@@ -1,6 +1,7 @@
 body {
     margin: 0 !important;
     background-color: black;
+    font-family: Futura;
 }
 
 :root {
@@ -200,7 +201,7 @@ section {
     margin-left: auto;
     margin-right: auto;
     /*margin-top: 25vh;*/
-    font-family: "Georgia",serif;
+    /*font-family: "Georgia",serif;*/
     padding-top: 25vh;
 }
 
@@ -246,7 +247,7 @@ section {
     /*font-size: 2em;*/
     margin-top: -2.2em;
     margin-left: 22em;
-    font-family: "Georgia",serif;
+    /*font-family: "Georgia",serif;*/
 }
 
 .optelsom-container {
@@ -315,7 +316,7 @@ section {
     font-size: 1.2em;
     /*color: white;*/
     /*font-family: Futura;*/
-    font-family: "Georgia",serif;
+    /*font-family: "Georgia",serif;*/
     box-shadow: 7px 7px 0px 0px rgba(248,239,42,1);
 }
 
@@ -336,7 +337,7 @@ section {
     flex-direction: column;
     /*margin-top: 10em;*/
     height: 100vh;
-    font-family: "Georgia",serif;
+    /*font-family: "Georgia",serif;*/
 }
 
 .blm-container-intro {
@@ -346,7 +347,7 @@ section {
 
 .blm-container-intro svg {
     height: 100vh;
-    margin-top: -5em;
+    /*margin-top: -5em;*/
 }
 
 .blm-container-intro-text {
@@ -417,7 +418,13 @@ section {
 .sticky-text {
     color: white;
     height: 100vh;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 10vh;
+}
+
+.sticky-test::-webkit-scrollbar {
+    display: none;
 }
 
 .sticky-text p {
@@ -425,7 +432,7 @@ section {
     background-color: white;
     color: black;
     box-shadow: 7px 7px 0px 0px rgba(248,239,42,1);
-    margin: 0em 5em 20em 7em;
+    margin: 0em 5em 2em 7em;
     padding: 1em;
 }
 
@@ -433,4 +440,61 @@ section {
     height: 100vh;
     position: sticky;
     top: 0;
+    margin-top: 10vh;
+}
+
+.patrice-text{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+.mid-title {
+    transition: all 1s ease;
+    border: 5px solid #f8ef2a;
+    padding: 0em 1em 0em 1em;
+    font-size: 2.7em;
+    color: white;
+    margin-top: 40vh;
+    max-height: 25vh;
+    font-family: Futura;
+    cursor: pointer;
+}
+
+.mid-title:hover {
+    background-color: #f8ef2a;
+    color: black;
+}
+
+.small-text {
+    font-size: 0.4em;
+    text-align: center;
+    /*margin-top: -2em;*/
+}
+
+.patrice-text-block {
+    background-color: white;
+    color: black;
+    box-shadow: 7px 7px 0px 0px rgba(248,239,42,1);
+    /*margin: 0em 5em 2em 7em;*/
+    padding: 1em;
+    width: 20vw;
+    margin-left: 5em;
+    margin-right: 5em;
+    /*position: absolute;*/
+}
+
+.patrice-text-side {
+    transition: all 1s ease;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.patrice img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
 }

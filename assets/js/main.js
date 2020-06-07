@@ -77,6 +77,7 @@ window.onload = function(){
     document.getElementById("blm-logo").addEventListener("click", blmLogo);
     document.getElementById("title").addEventListener("click", scrollTitle);
     document.getElementById("floyd").addEventListener("click", scrollFloyd);
+    document.querySelector(".mid-title").addEventListener("click", patriceText);
     document.querySelector(".arrow-container-left").addEventListener("click", scrollOne);
     riotImages();
 };
@@ -104,5 +105,10 @@ function scrollFloyd() {
     window.scrollTo({top: scrollPosition * 2, behavior: 'smooth'});
     document.getElementById("checkbox").checked = false;
     console.log(scrollPosition);
+}
+
+function patriceText() {
+    document.querySelector("#patrice-left").classList.toggle("opacity-0");
+    document.querySelector("#patrice-right").classList.toggle("opacity-0");
 }
 
