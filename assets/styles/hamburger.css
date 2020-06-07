@@ -15,10 +15,11 @@
 {
     display: block;
     position: relative;
-    top: 100px;
+    /*top: 100px;*/
+    top: 25px;
     /*left: 50px;*/
-    margin-top: -50px;
-    margin-left: 50px;
+    /*margin-top: -50px;*/
+    margin-left: 25px;
 
     z-index: 200;
 

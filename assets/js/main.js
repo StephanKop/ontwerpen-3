@@ -5,43 +5,39 @@ function scrollAnimation() {
     if (scroll >= 9000) {
         console.log('9000');
     }
-    else if (scroll >= viewportHeight * 5.2) {
+    else if (scroll >= viewportHeight * 6) {
         document.querySelector(".demonstratie-container").classList.remove("opacity-0");
         document.querySelector(".blm-container").classList.add("opacity-0");
-        console.log(viewportHeight * 5.2);
+        //hamburger
+        console.log(viewportHeight * 6);
     }
-    else if (scroll >= viewportHeight * 4.5) {
+    else if (scroll >= viewportHeight * 5) {
         document.querySelector(".blm-container").classList.remove("opacity-0");
+        setTimeout(function() { blmLogo(); }, 1000);
         document.querySelector(".optelsom-container").classList.add("opacity-0");
-        console.log("optelsom" + viewportHeight * 4.5);
+        //hamburger
+        console.log("optelsom" + viewportHeight * 5);
     }
-    else if (scroll >= viewportHeight * 3.3) {
+    else if (scroll >= viewportHeight * 4) {
         document.querySelector(".riot").classList.add("opacity-0");
         document.querySelector(".optelsom-container").classList.remove("opacity-0");
-        console.log(viewportHeight * 3.3);
+        document.getElementById('optelsom-container').classList.add("smoothUpTransition");
+        //hamburger
+        console.log(viewportHeight * 4);
     }
     else if (scroll >= viewportHeight * 3) {
-        // document.querySelector("#riot-img").src = "assets/img/riot3.jpg";
         document.querySelector(".riot").classList.remove("opacity-0");
-        console.log(viewportHeight * 3);
-    }
-    else if (scroll >= viewportHeight * 2.8) {
-        // document.querySelector("#riot-img").src = "assets/img/riot2.jpg";
-        console.log(viewportHeight * 2.8);
-    }
-    else if (scroll >= viewportHeight * 2.6) {
-        document.querySelector(".riot").classList.remove("opacity-0");
-        // document.querySelector("#riot-img").src = "assets/img/riot.jpg";
-        console.log(viewportHeight * 2.6);
-    }
-    else if (scroll >= viewportHeight * 2.4) {
         document.querySelector(".p-1").classList.add("opacity-0");
-        console.log(viewportHeight * 2.4);
+        //hamburger
+        document.querySelector('.hamburger-menu').classList.remove("opacity-0");
+        console.log(viewportHeight * 3);
     }
     else if (scroll >= viewportHeight * 2) {
         document.getElementById('p-1').classList.remove("opacity-0");
         document.getElementById('p-1').classList.add("smoothUpTransition");
         document.getElementById('article-title').classList.add("opacity-0");
+        //hamburger
+        document.querySelector('.hamburger-menu').classList.remove("opacity-0");
         console.log(viewportHeight * 2);
     }
     else if (scroll >= viewportHeight) {
@@ -49,12 +45,16 @@ function scrollAnimation() {
         document.getElementById('article-title').classList.remove("opacity-0");
         document.getElementById('article-title').classList.add("smoothUpTransition");
         document.querySelector('.victim-container').classList.add("opacity-0");
+        //hamburger
         document.querySelector('.hamburger-menu').classList.remove("opacity-0");
+        //arrow
+        document.querySelector('.arrow-container-left').classList.remove("opacity-0");
         console.log(viewportHeight);
     }
     else {
         document.getElementById('article-title').classList.add("opacity-0");
         document.querySelector('.victim-container').classList.remove("opacity-0");
+        //hamburger
         document.querySelector('.hamburger-menu').classList.add("opacity-0");
         console.log("nothing");
 
@@ -77,6 +77,7 @@ window.onload = function(){
     document.getElementById("blm-logo").addEventListener("click", blmLogo);
     document.getElementById("title").addEventListener("click", scrollTitle);
     document.getElementById("floyd").addEventListener("click", scrollFloyd);
+    document.querySelector(".arrow-container-left").addEventListener("click", scrollOne);
     riotImages();
 };
 
@@ -88,6 +89,10 @@ function blmLogo() {
     console.log('click');
 }
 const scrollPosition = window.innerHeight;
+
+function scrollOne() {
+    window.scrollBy({top: scrollPosition, behavior: 'smooth'});
+}
 
 function scrollTitle() {
     window.scrollTo({top: scrollPosition, behavior: 'smooth'});
