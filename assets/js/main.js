@@ -73,3 +73,5 @@ function blmLogo() {
     document.querySelector(".blm-text-4").classList.add("visible-text");
     console.log('click');
 }};
+
+
