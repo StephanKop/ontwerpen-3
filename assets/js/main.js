@@ -9,6 +9,9 @@ function scrollAnimation() {
         document.querySelector(".demonstratie-container").classList.remove("opacity-0");
         document.querySelector(".blm-container").classList.add("opacity-0");
         //hamburger
+        document.querySelector('.hamburger-menu').classList.remove("opacity-0");
+        //arrow
+        document.querySelector('.arrow-container-left').classList.remove("opacity-0");
         console.log(viewportHeight * 6);
     }
     else if (scroll >= viewportHeight * 5) {
@@ -16,6 +19,9 @@ function scrollAnimation() {
         setTimeout(function() { blmLogo(); }, 1000);
         document.querySelector(".optelsom-container").classList.add("opacity-0");
         //hamburger
+        document.querySelector('.hamburger-menu').classList.remove("opacity-0");
+        //arrow
+        document.querySelector('.arrow-container-left').classList.remove("opacity-0");
         console.log("optelsom" + viewportHeight * 5);
     }
     else if (scroll >= viewportHeight * 4) {
@@ -23,6 +29,9 @@ function scrollAnimation() {
         document.querySelector(".optelsom-container").classList.remove("opacity-0");
         document.getElementById('optelsom-container').classList.add("smoothUpTransition");
         //hamburger
+        document.querySelector('.hamburger-menu').classList.remove("opacity-0");
+        //arrow
+        document.querySelector('.arrow-container-left').classList.remove("opacity-0");
         console.log(viewportHeight * 4);
     }
     else if (scroll >= viewportHeight * 3) {
@@ -30,6 +39,8 @@ function scrollAnimation() {
         document.querySelector(".p-1").classList.add("opacity-0");
         //hamburger
         document.querySelector('.hamburger-menu').classList.remove("opacity-0");
+        //arrow
+        document.querySelector('.arrow-container-left').classList.remove("opacity-0");
         console.log(viewportHeight * 3);
     }
     else if (scroll >= viewportHeight * 2) {
@@ -38,6 +49,8 @@ function scrollAnimation() {
         document.getElementById('article-title').classList.add("opacity-0");
         //hamburger
         document.querySelector('.hamburger-menu').classList.remove("opacity-0");
+        //arrow
+        document.querySelector('.arrow-container-left').classList.remove("opacity-0");
         console.log(viewportHeight * 2);
     }
     else if (scroll >= viewportHeight) {
@@ -79,6 +92,11 @@ window.onload = function(){
     document.getElementById("floyd").addEventListener("click", scrollFloyd);
     document.querySelector(".mid-title").addEventListener("click", patriceText);
     document.querySelector(".arrow-container-left").addEventListener("click", scrollOne);
+    document.getElementById("aa").addEventListener("click", addAA);
+    document.getElementById("fem").addEventListener("click", addFem);
+    document.getElementById("sncc").addEventListener("click", addSncc);
+    document.getElementById("leader-3").addEventListener("click", addLeaders);
+
     riotImages();
 };
 
@@ -110,5 +128,28 @@ function scrollFloyd() {
 function patriceText() {
     document.querySelector("#patrice-left").classList.toggle("opacity-0");
     document.querySelector("#patrice-right").classList.toggle("opacity-0");
+}
+
+function addAA() {
+    document.getElementById('explanation').innerHTML = 'De anti-apartheidsbeweging was een internationale sociale beweging die zich keerde tegen de apartheid in Zuid-Afrika met name in de periode tussen ongeveer 1960 en 1994.';
+}
+
+function addFem() {
+    document.getElementById('explanation').innerHTML = 'De Verenigde Staten in de woelige jaren zeventig. Een aantal vrouwen binnen de Afro-Amerikaanse bevrijdingsbeweging is al jaren ontevreden met de rol die hen is toegewezen. Ze voelen zich genegeerd door hun mannelijke strijdgenoten en gediscrimineerd door de vrouwonvriendelijke mentaliteit en rolverdelingen die er heersen.';
+}
+
+function addSncc() {
+    document.getElementById('explanation').innerHTML = 'De Student Nonviolent Coordinating Committee (SNCC) was één der organisaties actief in de Afro-Amerikaanse Burgerrechtenbeweging (African-American Civil Rights Movement). De SNCC ontstond vanuit een aantal studentenbijeenkomsten onder leiding van Ella Baker in april 1960 aan de Shaw University in Raleigh, North Carolina.';
+}
+
+function addLeaders() {
+    setTimeout(() => {  document.querySelector("#leader-1").classList.toggle("opacity-0"); }, 1000);
+    // document.querySelector("#leader-1").classList.toggle("opacity-0");
+    document.querySelector("#leader-2").classList.toggle("opacity-0");
+    document.querySelector("#leader-4").classList.toggle("opacity-0");
+    // document.querySelector("#leader-5").classList.toggle("opacity-0");
+    setTimeout(() => {  document.querySelector("#leader-5").classList.toggle("opacity-0"); }, 1000);
+    setTimeout(() => {  document.querySelector("#leader-protest").classList.toggle("opacity-0"); }, 2000);
+
 }
 
