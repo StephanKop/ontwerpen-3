@@ -36,6 +36,29 @@ section {
     /*display: none;*/
 }
 
+.page-title {
+    color: white;
+    /*color: #f8ef2a;*/
+    font-family: Futura;
+    margin-top: -0.4rem;
+    margin-left: 6rem;
+    transition: all 0.2s ease;
+    /*opacity: 1;*/
+    transform: translateY(0em);
+    height: 2em;
+}
+
+.title-animation {
+    /*opacity: 0;*/
+    transform: translateY(-2.5em);
+}
+
+/*@keyframes titleAnim {*/
+/*    0% {opacity: 0;}*/
+/*    50% {opacity: 0.5;}*/
+/*    100% {opacity: 1;}*/
+/*}*/
+
 @keyframes imageFade {
     0% {opacity: 1;}
     50% {opacity: 0;}
@@ -194,15 +217,11 @@ section {
     display: flex;
     flex-direction: column-reverse;
     padding: 1em;
-    /*background-color: white;*/
-    /*color: white;*/
     width: 50vw;
     color: black;
     margin-left: auto;
     margin-right: auto;
-    /*margin-top: 25vh;*/
-    /*font-family: "Georgia",serif;*/
-    padding-top: 25vh;
+    margin-top: -20rem;
 }
 
 .p-1 img {
@@ -220,6 +239,36 @@ section {
     margin: 1em;
     height: 8em;
     box-shadow: 7px 7px 0px 0px rgba(248,239,42,1);
+}
+
+.transcript {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5em;
+}
+
+.transcript p {
+    cursor: pointer;
+    width: 25vw;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-top: -2.17em;*/
+    transition: all 1s ease;
+    /*font-size: 2em;*/
+}
+
+.transcript h2 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -30rem;
+    color: white;
+    font-size: 5em;
+    transition: all 1s ease;
 }
 
 .opacity-0 {
@@ -345,14 +394,14 @@ section {
     flex-direction: row;
 }
 
-.blm-container-intro svg {
+.blm-container-intro img {
     height: 100vh;
-    /*margin-top: -5em;*/
 }
 
 .blm-container-intro-text {
     display: flex;
     flex-direction: column;
+    margin-top: 3rem;
 }
 
 .blm-container-intro p {
@@ -387,9 +436,11 @@ section {
 .demonstratie-container {
     transition: all 1s ease;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     /*margin-top: 10em;*/
     padding-top: 10vh;
+    height: 100vh;
+    overflow: scroll;
     margin-left: 5em;
 }
 
