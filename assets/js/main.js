@@ -208,31 +208,31 @@ function scrollRiot() {
 }
 
 function scrollOptelsom() {
-    window.scrollTo({top: scrollPosition * 4, behavior: 'smooth'});
-    document.getElementById("checkbox").checked = false;
-    console.log(scrollPosition);
-}
-
-function scrollBlm() {
     window.scrollTo({top: scrollPosition * 5, behavior: 'smooth'});
     document.getElementById("checkbox").checked = false;
     console.log(scrollPosition);
 }
 
-function scrollPatrisse() {
+function scrollBlm() {
     window.scrollTo({top: scrollPosition * 6, behavior: 'smooth'});
     document.getElementById("checkbox").checked = false;
     console.log(scrollPosition);
 }
 
+function scrollPatrisse() {
+    window.scrollTo({top: scrollPosition * 8, behavior: 'smooth'});
+    document.getElementById("checkbox").checked = false;
+    console.log(scrollPosition);
+}
+
 function scrollOrganisaties() {
-    window.scrollTo({top: scrollPosition * 7, behavior: 'smooth'});
+    window.scrollTo({top: scrollPosition * 9, behavior: 'smooth'});
     document.getElementById("checkbox").checked = false;
     console.log(scrollPosition);
 }
 
 function scrollLeiders() {
-    window.scrollTo({top: scrollPosition * 8, behavior: 'smooth'});
+    window.scrollTo({top: scrollPosition * 10, behavior: 'smooth'});
     document.getElementById("checkbox").checked = false;
     console.log(scrollPosition);
 }
