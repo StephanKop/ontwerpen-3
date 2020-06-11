@@ -5,7 +5,25 @@ function scrollAnimation() {
     if (scroll >= 9000) {
         console.log('9000');
     }
+    else if (scroll >= viewportHeight * 10) {
+        afdelingenPage();
+        document.querySelector('.afdelingen-container').classList.remove("opacity-0");
+        //hamburger
+        document.querySelector('.hamburger-menu').classList.remove("opacity-0");
+        //arrow
+        document.querySelector('.arrow-container-left').classList.remove("opacity-0");
+        //title
+        document.querySelector('.page-title').classList.add("title-animation");
+        document.querySelector('.page-title').innerHTML = "Afdelingen";
+        setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
+        console.log(viewportHeight * 10);
+    }
     else if (scroll >= viewportHeight * 9) {
+        //hide
+        document.querySelector('.afdelingen-container').classList.add("opacity-0");
+        for (let i = 0; i < 30; i++) {
+            document.querySelector('#fist-' + i).classList.add("opacity-0");
+        }
         //hamburger
         document.querySelector('.hamburger-menu').classList.remove("opacity-0");
         //arrow
@@ -14,6 +32,8 @@ function scrollAnimation() {
         document.querySelector('.page-title').classList.add("title-animation");
         document.querySelector('.page-title').innerHTML = "Meerdere leiders";
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
+        //counter
+        counter = 0;
         console.log(viewportHeight * 9);
     }
     else if (scroll >= viewportHeight * 8) {
@@ -54,7 +74,7 @@ function scrollAnimation() {
     else if (scroll >= viewportHeight * 5) {
         document.querySelector(".blm-container").classList.remove("opacity-0");
         setTimeout(function() { blmLogo(); }, 1000);
-        document.querySelector(".optelsom-container").classList.toggle("opacity-0");
+        document.querySelector(".optelsom-container").classList.add("opacity-0");
         //hamburger
         document.querySelector('.hamburger-menu').classList.remove("opacity-0");
         //arrow
@@ -63,6 +83,8 @@ function scrollAnimation() {
         document.querySelector('.page-title').classList.add("title-animation");
         document.querySelector('.page-title').innerHTML = "#BLM";
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
+        //counter
+        counter = 0;
         console.log("optelsom" + viewportHeight * 5);
     }
     else if (scroll >= viewportHeight * 4) {
@@ -77,11 +99,12 @@ function scrollAnimation() {
         document.querySelector('.page-title').classList.add("title-animation");
         document.querySelector('.page-title').innerHTML = "De optelsom";
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
-        console.log(viewportHeight * 4);
+        console.log("testje" + viewportHeight * 4);
     }
     else if (scroll >= viewportHeight * 3) {
         document.querySelector(".riot").classList.remove("opacity-0");
         document.querySelector(".p-1").classList.add("opacity-0");
+        document.querySelector(".optelsom-container").classList.add("opacity-0");
         //hamburger
         document.querySelector('.hamburger-menu').classList.remove("opacity-0");
         //arrow
@@ -90,6 +113,8 @@ function scrollAnimation() {
         document.querySelector('.page-title').classList.add("title-animation");
         document.querySelector('.page-title').innerHTML = "Riots";
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
+        //counter
+        counter = 0;
         console.log(viewportHeight * 3);
     }
     else if (scroll >= viewportHeight * 2) {
@@ -167,6 +192,7 @@ window.onload = function(){
     document.getElementById("patrisse").addEventListener("click", scrollPatrisse);
     document.getElementById("organisaties").addEventListener("click", scrollOrganisaties);
     document.getElementById("leiders").addEventListener("click", scrollLeiders);
+    document.getElementById("afdelingen").addEventListener("click", scrollAfdelingen);
 
     riotImages();
 };
@@ -176,7 +202,6 @@ function blmLogo() {
     document.querySelector(".blm-text-2").classList.add("visible-text");
     document.querySelector(".blm-text-3").classList.add("visible-text");
     document.querySelector(".blm-text-4").classList.add("visible-text");
-    console.log('click');
 }
 const scrollPosition = window.innerHeight;
 
@@ -234,6 +259,12 @@ function scrollOrganisaties() {
 
 function scrollLeiders() {
     window.scrollTo({top: scrollPosition * 9, behavior: 'smooth'});
+    document.getElementById("checkbox").checked = false;
+    console.log(scrollPosition);
+}
+
+function scrollAfdelingen() {
+    window.scrollTo({top: scrollPosition * 10, behavior: 'smooth'});
     document.getElementById("checkbox").checked = false;
     console.log(scrollPosition);
 }
@@ -303,15 +334,142 @@ function transcriptFloyd() {
     setTimeout(function(){document.getElementById('p-1').classList.add("smoothUpTransition");},30000);
 }
 
+let counter = 0;
+
 function optelsomPage() {
-    document.querySelector(".optelsom-left-img").classList.toggle("opacity-0");
-    document.querySelector(".optelsom-right-img").classList.toggle("opacity-0");
-    setTimeout(() => {  document.querySelector(".optelsom-left-img").classList.toggle("opacity-0"); }, 4000);
-    setTimeout(() => {  document.querySelector(".optelsom-right-img").classList.toggle("opacity-0"); }, 4000);
-    setTimeout(() => {  document.querySelector(".optelsom-left-img").classList.toggle("hidden"); }, 7000);
-    setTimeout(() => {  document.querySelector(".optelsom-right-img").classList.toggle("hidden"); }, 7000);
+    if (counter == 0) {
+            document.querySelector(".optelsom-1").classList.add("opacity-0");
+            document.querySelector(".plus-1").classList.add("opacity-0");
+            document.querySelector(".optelsom-2").classList.add("opacity-0");
+            document.querySelector(".plus-2").classList.add("opacity-0");
+            document.querySelector(".optelsom-3").classList.add("opacity-0");
 
-    setTimeout(() => {  document.querySelector(".optelsom-container").classList.remove("opacity-0"); }, 7000);
+        setTimeout(() => {
+            document.querySelector(".optelsom-container").classList.remove("opacity-0");
+        }, 500);
+        setTimeout(() => {
+            document.querySelector(".optelsom-title").classList.remove("opacity-0");
+        }, 500);
+        setTimeout(() => {
+            document.querySelector(".optelsom-left-img").classList.remove("opacity-0");
+        }, 500);
+        setTimeout(() => {
+            document.querySelector(".optelsom-right-img").classList.remove("opacity-0");
+        }, 500);
+        setTimeout(() => {
+            document.querySelector(".optelsom-left-img").classList.add("optelsom-left-img-animation");
+        }, 500);
+        setTimeout(() => {
+            document.querySelector(".optelsom-right-img").classList.add("optelsom-right-img-animation");
+        }, 500);
+        setTimeout(() => {
+            document.querySelector(".optelsom-left-img").classList.add("opacity-0");
+        }, 4000);
+        setTimeout(() => {
+            document.querySelector(".optelsom-right-img").classList.add("opacity-0");
+        }, 4000);
+        setTimeout(() => {
+            document.querySelector(".optelsom-left-img").classList.remove("optelsom-left-img-animation");
+        }, 7000);
+        setTimeout(() => {
+            document.querySelector(".optelsom-right-img").classList.remove("optelsom-right-img-animation");
+        }, 7000);
 
+        setTimeout(() => {
+            document.querySelector(".optelsom-1").classList.remove("opacity-0");
+        }, 7000);
+        setTimeout(() => {
+            document.querySelector(".plus-1").classList.remove("opacity-0");
+        }, 7500);
+        setTimeout(() => {
+            document.querySelector(".optelsom-2").classList.remove("opacity-0");
+        }, 8000);
+        setTimeout(() => {
+            document.querySelector(".plus-2").classList.remove("opacity-0");
+        }, 8500);
+        setTimeout(() => {
+            document.querySelector(".optelsom-3").classList.remove("opacity-0");
+        }, 9000);
+        counter++;
+    }
+}
+
+function afdelingenPage() {
+    if (counter == 0) {
+        for (let i = 0; i < 30; i++) {
+            document.querySelector(".fists").innerHTML += '<img src="assets/img/fist.svg"' + 'class="fist-img opacity-0"' + ' id="fist-' + i + '"' + '>';
+        }
+        setTimeout(() => {document.querySelector("#fist-0").classList.remove('opacity-0')}, 100);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "1"}, 100);
+        setTimeout(() => {document.querySelector("#fist-1").classList.remove('opacity-0')}, 100);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "2"}, 500);
+        setTimeout(() => {document.querySelector("#fist-2").classList.remove('opacity-0')}, 500);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "3"}, 1000);
+        setTimeout(() => {document.querySelector("#fist-3").classList.remove('opacity-0')}, 1000);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "4"}, 1500);
+        setTimeout(() => {document.querySelector("#fist-4").classList.remove('opacity-0')}, 1500);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "5"}, 2000);
+        setTimeout(() => {document.querySelector("#fist-5").classList.remove('opacity-0')}, 2000);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "6"}, 2200);
+        setTimeout(() => {document.querySelector("#fist-6").classList.remove('opacity-0')}, 2200);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "7"}, 2400);
+        setTimeout(() => {document.querySelector("#fist-7").classList.remove('opacity-0')}, 2400);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "8"}, 2600);
+        setTimeout(() => {document.querySelector("#fist-8").classList.remove('opacity-0')}, 2600);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "9"}, 2800);
+        setTimeout(() => {document.querySelector("#fist-9").classList.remove('opacity-0')}, 2800);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "10"}, 3000);
+        setTimeout(() => {document.querySelector("#fist-10").classList.remove('opacity-0')}, 3000);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "11"}, 3100);
+        setTimeout(() => {document.querySelector("#fist-11").classList.remove('opacity-0')}, 3100);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "12"}, 3200);
+        setTimeout(() => {document.querySelector("#fist-12").classList.remove('opacity-0')}, 3200);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "13"}, 3300);
+        setTimeout(() => {document.querySelector("#fist-13").classList.remove('opacity-0')}, 3300);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "14"}, 3400);
+        setTimeout(() => {document.querySelector("#fist-14").classList.remove('opacity-0')}, 3400);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "15"}, 3500);
+        setTimeout(() => {document.querySelector("#fist-15").classList.remove('opacity-0')}, 3500);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "16"}, 3600);
+        setTimeout(() => {document.querySelector("#fist-16").classList.remove('opacity-0')}, 3600);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "17"}, 3700);
+        setTimeout(() => {document.querySelector("#fist-17").classList.remove('opacity-0')}, 3700);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "18"}, 3800);
+        setTimeout(() => {document.querySelector("#fist-18").classList.remove('opacity-0')}, 3800);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "19"}, 3900);
+        setTimeout(() => {document.querySelector("#fist-19").classList.remove('opacity-0')}, 3900);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "20"}, 4000);
+        setTimeout(() => {document.querySelector("#fist-20").classList.remove('opacity-0')}, 4000);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "21"}, 4100);
+        setTimeout(() => {document.querySelector("#fist-21").classList.remove('opacity-0')}, 4100);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "22"}, 4200);
+        setTimeout(() => {document.querySelector("#fist-22").classList.remove('opacity-0')}, 4200);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "23"}, 4300);
+        setTimeout(() => {document.querySelector("#fist-23").classList.remove('opacity-0')}, 4300);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "24"}, 4400);
+        setTimeout(() => {document.querySelector("#fist-24").classList.remove('opacity-0')}, 4400);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "25"}, 4500);
+        setTimeout(() => {document.querySelector("#fist-25").classList.remove('opacity-0')}, 4500);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "26"}, 4600);
+        setTimeout(() => {document.querySelector("#fist-26").classList.remove('opacity-0')}, 4600);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "27"}, 4700);
+        setTimeout(() => {document.querySelector("#fist-27").classList.remove('opacity-0')}, 4700);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "28"}, 4800);
+        setTimeout(() => {document.querySelector("#fist-28").classList.remove('opacity-0')}, 4800);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "29"}, 4900);
+        setTimeout(() => {document.querySelector("#fist-29").classList.remove('opacity-0')}, 4900);
+        setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "30"}, 4900);
+
+
+        setTimeout(() => {document.querySelector("#fist-20").classList.toggle('bounce-animation')}, 5500);
+
+        document.querySelector("#fist-20").addEventListener('click', openAfdelingenText);
+        counter++;
+    }
+}
+
+function openAfdelingenText() {
+    document.querySelector(".afdelingen-text-container").classList.toggle('opacity-0');
+    document.querySelector("#fist-20").classList.toggle('fist-20-background');
 }
 
