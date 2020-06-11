@@ -14,7 +14,7 @@ body {
 }
 
 section {
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     height: 100vh;
     /*background-color: red;*/
     /*border: 10px solid white;*/
@@ -158,36 +158,6 @@ section {
     margin-right: auto;
 }
 
-/*.victims-img:nth-child(1) {*/
-/*    animation: imageFade 3s;*/
-/*    animation-delay: 0s, 12s;*/
-/*}*/
-
-/*.victims-img:nth-child(2) {*/
-/*    animation: imageFade 3s;*/
-/*    animation-delay: 2s, 14s;*/
-/*}*/
-
-/*.victims-img:nth-child(3) {*/
-/*    animation: imageFade 3s;*/
-/*    animation-delay: 4s, 16s;*/
-/*}*/
-
-/*.victims-img:nth-child(4) {*/
-/*    animation: imageFade 3s;*/
-/*    animation-delay: 6s, 18s;*/
-/*}*/
-
-/*.victims-img:nth-child(5) {*/
-/*    animation: imageFade 3s;*/
-/*    animation-delay: 8s, 20s;*/
-/*}*/
-
-/*.victims-img:nth-child(6) {*/
-/*    animation: imageFade 3s;*/
-/*    animation-delay: 10s, 20s;*/
-/*}*/
-
 .main-title {
     transition: all 3s ease;
     margin-left: auto;
@@ -281,6 +251,10 @@ section {
     opacity: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 .smoothUpTransition {
     animation: smoothUp 1s ease;
     animation-fill-mode: forwards;
@@ -304,11 +278,39 @@ section {
     /*font-family: "Georgia",serif;*/
 }
 
+.optelsom-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.optelsom-left-img img {
+    transition: all 1s ease;
+    width: 40em;
+    height: 40em;
+    /*margin-bottom: -30em;*/
+    margin-left: -15em;
+    transform: rotate(30deg);
+}
+
+.optelsom-right-img img {
+    transition: all 1s ease;
+    z-index: 0;
+    width: 40em;
+    height: 40em;
+    /*margin-bottom: -35em;*/
+    margin-right: -25em;
+    transform: rotate(-20deg);
+}
+
 .optelsom-container {
     transition: all 1s ease;
     display: flex;
     flex-direction: column;
-    margin-top: 25vh;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-top: 25vh;*/
     /*margin-top: 10em;*/
 }
 

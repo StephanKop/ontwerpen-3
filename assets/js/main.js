@@ -54,7 +54,7 @@ function scrollAnimation() {
     else if (scroll >= viewportHeight * 5) {
         document.querySelector(".blm-container").classList.remove("opacity-0");
         setTimeout(function() { blmLogo(); }, 1000);
-        document.querySelector(".optelsom-container").classList.add("opacity-0");
+        document.querySelector(".optelsom-container").classList.toggle("opacity-0");
         //hamburger
         document.querySelector('.hamburger-menu').classList.remove("opacity-0");
         //arrow
@@ -67,7 +67,8 @@ function scrollAnimation() {
     }
     else if (scroll >= viewportHeight * 4) {
         document.querySelector(".riot").classList.add("opacity-0");
-        document.querySelector(".optelsom-container").classList.remove("opacity-0");
+        // document.querySelector(".optelsom-container").classList.remove("opacity-0");
+        optelsomPage();
         //hamburger
         document.querySelector('.hamburger-menu').classList.remove("opacity-0");
         //arrow
@@ -300,9 +301,17 @@ function transcriptFloyd() {
     setTimeout(() => {  document.querySelector(".floyd-overleed").classList.toggle("opacity-0"); }, 28000);
     setTimeout(function(){document.getElementById('p-1').classList.remove("opacity-0");},30000);
     setTimeout(function(){document.getElementById('p-1').classList.add("smoothUpTransition");},30000);
+}
 
+function optelsomPage() {
+    document.querySelector(".optelsom-left-img").classList.toggle("opacity-0");
+    document.querySelector(".optelsom-right-img").classList.toggle("opacity-0");
+    setTimeout(() => {  document.querySelector(".optelsom-left-img").classList.toggle("opacity-0"); }, 4000);
+    setTimeout(() => {  document.querySelector(".optelsom-right-img").classList.toggle("opacity-0"); }, 4000);
+    setTimeout(() => {  document.querySelector(".optelsom-left-img").classList.toggle("hidden"); }, 7000);
+    setTimeout(() => {  document.querySelector(".optelsom-right-img").classList.toggle("hidden"); }, 7000);
 
-    // setTimeout(() => {  document.querySelector(".transcript").style.display = "none"; }, 25000);
+    setTimeout(() => {  document.querySelector(".optelsom-container").classList.remove("opacity-0"); }, 7000);
 
 }
 
