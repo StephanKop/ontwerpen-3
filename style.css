@@ -279,15 +279,15 @@ section {
 }
 
 @keyframes slideInLeft {
-    0% {transform: translateX(0em) rotate(0deg);}
+    0% {transform: translateX(0em);}
     /*50% {transform: translateX(5em);}*/
-    100% {transform: translateX(28em) rotate(10deg);}
+    100% {transform: translateX(28em);}
 }
 
 @keyframes slideInRight {
-    0% {transform: translateX(0em) rotate(0deg);}
+    0% {transform: translateX(0em);}
     /*50% {transform: translateX(5em);}*/
-    100% {transform: translateX(-17em) rotate(-5deg);}
+    100% {transform: translateX(-17em);}
 }
 
 .optelsom-section {
@@ -297,12 +297,17 @@ section {
     transition: all 1s ease;
 }
 
+.optelsom-left-img {
+    transition: all 3s ease;
+}
+
 .optelsom-left-img img {
+    position: absolute;
     transition: all 1s ease;
     width: 40em;
     height: 40em;
     /*margin-bottom: -30em;*/
-    margin-left: -45em;
+    margin-left: -16em;
     transform: rotate(30deg);
 }
 
@@ -310,13 +315,18 @@ section {
     animation: slideInLeft 3s ease forwards;
 }
 
+.optelsom-right-img {
+    transition: all 3s ease;
+}
+
 .optelsom-right-img img {
+    position: absolute;
     transition: all 1s ease;
     z-index: 0;
     width: 40em;
     height: 40em;
     /*margin-bottom: -35em;*/
-    margin-right: -45em;
+    margin-left: -16em;
     margin-top: 2em;
     transform: rotate(-20deg);
 }
@@ -847,4 +857,88 @@ section {
     transition: all 1s ease;
     background-color: orangered;
     animation: none;
+}
+/**/
+/*interview*/
+/**/
+
+.interview-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100vh;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    margin-top: 5em;
+    height: 90vh;
+    overflow: auto;
+}
+
+.patricce-chat-block {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5em;
+    transition: all 1s ease;
+}
+
+.patricce-chat-block img {
+    width: 5em;
+    height: 5em;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.patricce-chat-block p {
+    margin-top: 0em;
+    margin-left: 1em;
+    background-color: white;
+    padding: 1em 1em 1em 1em;
+    box-shadow: 7px 7px 0px 0px rgba(248,239,42,1);
+}
+
+.mid-section {
+    transition: all 1s ease;
+    margin-top: 4em;
+}
+
+.mid-section h2 {
+    transition: all 1s ease;
+    color: white;
+    width: 20vw;
+    border: 5px solid #f8ef2a;
+    padding: 1em 1em 1em 1em;
+    cursor: pointer;
+}
+
+.mid-section h2:hover {
+    background-color: #f8ef2a;
+    color: black;
+}
+
+.vera-chat-block {
+    display: flex;
+    flex-direction: row;
+    margin-right: 5em;
+    transition: all 1s ease;
+}
+
+.vera-chat-block img {
+    width: 5em;
+    height: 5em;
+    object-fit: cover;
+    border-radius: 100%;
+    background-color: #9ECECA;
+}
+
+.vera-chat-block p {
+    margin-top: 0em;
+    margin-left: 1em;
+    background-color: white;
+    padding: 1em 1em 1em 1em;
+    box-shadow: 7px 7px 0px 0px rgba(248,239,42,1);
 }

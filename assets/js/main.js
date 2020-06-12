@@ -1,13 +1,31 @@
 window.onscroll = function() {scrollAnimation()};
+let scroll = document.scrollingElement.scrollTop;
+let viewportHeight = window.innerHeight;
 function scrollAnimation() {
     let scroll = document.scrollingElement.scrollTop;
     let viewportHeight = window.innerHeight;
     if (scroll >= 9000) {
         console.log('9000');
     }
+    else if (scroll >= viewportHeight * 11) {
+        //hide
+        for (let i = 0; i < 30; i++) {
+            document.querySelector('#fist-' + i).classList.add("opacity-0");
+        }
+        //hamburger
+        document.querySelector('.hamburger-menu').classList.remove("opacity-0");
+        //arrow
+        document.querySelector('.arrow-container-left').classList.remove("opacity-0");
+        //title
+        document.querySelector('.page-title').classList.add("title-animation");
+        document.querySelector('.page-title').innerHTML = "Het gesprek";
+        //counter
+        counter = 0;
+        setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
+    }
     else if (scroll >= viewportHeight * 10) {
-        afdelingenPage();
         document.querySelector('.afdelingen-container').classList.remove("opacity-0");
+        afdelingenPage();
         //hamburger
         document.querySelector('.hamburger-menu').classList.remove("opacity-0");
         //arrow
@@ -16,7 +34,6 @@ function scrollAnimation() {
         document.querySelector('.page-title').classList.add("title-animation");
         document.querySelector('.page-title').innerHTML = "Afdelingen";
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
-        console.log(viewportHeight * 10);
     }
     else if (scroll >= viewportHeight * 9) {
         //hide
@@ -34,7 +51,6 @@ function scrollAnimation() {
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
         //counter
         counter = 0;
-        console.log(viewportHeight * 9);
     }
     else if (scroll >= viewportHeight * 8) {
         //hamburger
@@ -45,7 +61,6 @@ function scrollAnimation() {
         document.querySelector('.page-title').classList.add("title-animation");
         document.querySelector('.page-title').innerHTML = "Ondersteunende organisaties";
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
-        console.log(viewportHeight * 8);
     }
     else if (scroll >= viewportHeight * 7) {
         //hamburger
@@ -56,7 +71,6 @@ function scrollAnimation() {
         document.querySelector('.page-title').classList.add("title-animation");
         document.querySelector('.page-title').innerHTML = "Patrisse Cullors";
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
-        console.log(viewportHeight * 7);
     }
     else if (scroll >= viewportHeight * 6) {
         document.querySelector(".sticky-container").classList.remove("opacity-0");
@@ -69,7 +83,6 @@ function scrollAnimation() {
         document.querySelector('.page-title').classList.add("title-animation");
         document.querySelector('.page-title').innerHTML = "#BLM";
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
-        console.log(viewportHeight * 6);
     }
     else if (scroll >= viewportHeight * 5) {
         document.querySelector(".blm-container").classList.remove("opacity-0");
@@ -85,7 +98,6 @@ function scrollAnimation() {
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
         //counter
         counter = 0;
-        console.log("optelsom" + viewportHeight * 5);
     }
     else if (scroll >= viewportHeight * 4) {
         document.querySelector(".riot").classList.add("opacity-0");
@@ -99,7 +111,6 @@ function scrollAnimation() {
         document.querySelector('.page-title').classList.add("title-animation");
         document.querySelector('.page-title').innerHTML = "De optelsom";
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
-        console.log("testje" + viewportHeight * 4);
     }
     else if (scroll >= viewportHeight * 3) {
         document.querySelector(".riot").classList.remove("opacity-0");
@@ -115,7 +126,6 @@ function scrollAnimation() {
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
         //counter
         counter = 0;
-        console.log(viewportHeight * 3);
     }
     else if (scroll >= viewportHeight * 2) {
         // setTimeout(function(){document.getElementById('p-1').classList.remove("opacity-0");},5000);
@@ -132,7 +142,6 @@ function scrollAnimation() {
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
         // transcriptFloyd();
         addFirstTranscriptLine();
-        console.log(viewportHeight * 2);
     }
     else if (scroll >= viewportHeight) {
         document.getElementById('p-1').classList.add("opacity-0");
@@ -148,7 +157,6 @@ function scrollAnimation() {
         document.querySelector('.page-title').classList.add("title-animation");
         document.querySelector('.page-title').innerHTML = " ";
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
-        console.log(viewportHeight);
     }
     else {
         document.getElementById('article-title').classList.add("opacity-0");
@@ -181,6 +189,7 @@ window.onload = function(){
     document.getElementById("sncc").addEventListener("click", addSncc);
     document.getElementById("leader-3").addEventListener("click", addLeaders);
     document.querySelector(".transcript").addEventListener("click", transcriptFloyd);
+    document.querySelector("#start-gesprek").addEventListener("click", interview);
 
     //Hamburger menu links
     document.getElementById("home").addEventListener("click", scrollHome);
@@ -193,6 +202,8 @@ window.onload = function(){
     document.getElementById("organisaties").addEventListener("click", scrollOrganisaties);
     document.getElementById("leiders").addEventListener("click", scrollLeiders);
     document.getElementById("afdelingen").addEventListener("click", scrollAfdelingen);
+    document.getElementById("afdelingen").addEventListener("click", scrollGesprek);
+
 
     riotImages();
 };
@@ -208,63 +219,58 @@ const scrollPosition = window.innerHeight;
 function scrollOne() {
     window.scrollBy({top: scrollPosition, behavior: 'smooth'});
 }
-
 function scrollHome() {
     window.scrollTo({top: 0, behavior: 'smooth'});
     document.getElementById("checkbox").checked = false;
     console.log(scrollPosition);
 }
-
 function scrollTitle() {
     window.scrollTo({top: scrollPosition, behavior: 'smooth'});
     document.getElementById("checkbox").checked = false;
     console.log(scrollPosition);
 }
-
 function scrollFloyd() {
     window.scrollTo({top: scrollPosition * 2, behavior: 'smooth'});
     document.getElementById("checkbox").checked = false;
     console.log(scrollPosition);
 }
-
 function scrollRiot() {
     window.scrollTo({top: scrollPosition * 3, behavior: 'smooth'});
     document.getElementById("checkbox").checked = false;
     console.log(scrollPosition);
 }
-
 function scrollOptelsom() {
     window.scrollTo({top: scrollPosition * 4, behavior: 'smooth'});
     document.getElementById("checkbox").checked = false;
     console.log(scrollPosition);
 }
-
 function scrollBlm() {
     window.scrollTo({top: scrollPosition * 5, behavior: 'smooth'});
     document.getElementById("checkbox").checked = false;
     console.log(scrollPosition);
 }
-
 function scrollPatrisse() {
     window.scrollTo({top: scrollPosition * 7, behavior: 'smooth'});
     document.getElementById("checkbox").checked = false;
     console.log(scrollPosition);
 }
-
 function scrollOrganisaties() {
     window.scrollTo({top: scrollPosition * 8, behavior: 'smooth'});
     document.getElementById("checkbox").checked = false;
     console.log(scrollPosition);
 }
-
 function scrollLeiders() {
     window.scrollTo({top: scrollPosition * 9, behavior: 'smooth'});
     document.getElementById("checkbox").checked = false;
     console.log(scrollPosition);
 }
-
 function scrollAfdelingen() {
     window.scrollTo({top: scrollPosition * 10, behavior: 'smooth'});
+    document.getElementById("checkbox").checked = false;
+    console.log(scrollPosition);
+}
+function scrollGesprek() {
+    window.scrollTo({top: scrollPosition * 11, behavior: 'smooth'});
     document.getElementById("checkbox").checked = false;
     console.log(scrollPosition);
 }
@@ -337,67 +343,51 @@ function transcriptFloyd() {
 let counter = 0;
 
 function optelsomPage() {
-    if (counter == 0) {
-            document.querySelector(".optelsom-1").classList.add("opacity-0");
-            document.querySelector(".plus-1").classList.add("opacity-0");
-            document.querySelector(".optelsom-2").classList.add("opacity-0");
-            document.querySelector(".plus-2").classList.add("opacity-0");
-            document.querySelector(".optelsom-3").classList.add("opacity-0");
+            if (counter === 0) {
+                document.querySelector(".optelsom-1").classList.add("opacity-0");
+                document.querySelector(".plus-1").classList.add("opacity-0");
+                document.querySelector(".optelsom-2").classList.add("opacity-0");
+                document.querySelector(".plus-2").classList.add("opacity-0");
+                document.querySelector(".optelsom-3").classList.add("opacity-0");
+                document.querySelector(".optelsom-left-img").classList.remove("opacity-0");
+                document.querySelector(".optelsom-right-img").classList.remove("opacity-0");
 
-        setTimeout(() => {
-            document.querySelector(".optelsom-container").classList.remove("opacity-0");
-        }, 500);
-        setTimeout(() => {
-            document.querySelector(".optelsom-title").classList.remove("opacity-0");
-        }, 500);
-        setTimeout(() => {
-            document.querySelector(".optelsom-left-img").classList.remove("opacity-0");
-        }, 500);
-        setTimeout(() => {
-            document.querySelector(".optelsom-right-img").classList.remove("opacity-0");
-        }, 500);
-        setTimeout(() => {
-            document.querySelector(".optelsom-left-img").classList.add("optelsom-left-img-animation");
-        }, 500);
-        setTimeout(() => {
-            document.querySelector(".optelsom-right-img").classList.add("optelsom-right-img-animation");
-        }, 500);
-        setTimeout(() => {
-            document.querySelector(".optelsom-left-img").classList.add("opacity-0");
-        }, 4000);
-        setTimeout(() => {
-            document.querySelector(".optelsom-right-img").classList.add("opacity-0");
-        }, 4000);
-        setTimeout(() => {
-            document.querySelector(".optelsom-left-img").classList.remove("optelsom-left-img-animation");
-        }, 7000);
-        setTimeout(() => {
-            document.querySelector(".optelsom-right-img").classList.remove("optelsom-right-img-animation");
-        }, 7000);
-
-        setTimeout(() => {
-            document.querySelector(".optelsom-1").classList.remove("opacity-0");
-        }, 7000);
-        setTimeout(() => {
-            document.querySelector(".plus-1").classList.remove("opacity-0");
-        }, 7500);
-        setTimeout(() => {
-            document.querySelector(".optelsom-2").classList.remove("opacity-0");
-        }, 8000);
-        setTimeout(() => {
-            document.querySelector(".plus-2").classList.remove("opacity-0");
-        }, 8500);
-        setTimeout(() => {
-            document.querySelector(".optelsom-3").classList.remove("opacity-0");
-        }, 9000);
-        counter++;
-    }
+                setTimeout(() => {
+                    document.querySelector(".optelsom-container").classList.remove("opacity-0");
+                    document.querySelector(".optelsom-title").classList.remove("opacity-0");
+                    // document.querySelector(".optelsom-left-img").classList.add("optelsom-left-img-animation");
+                    // document.querySelector(".optelsom-right-img").classList.add("optelsom-right-img-animation");
+                }, 500);
+                setTimeout(() => {
+                    document.querySelector(".optelsom-left-img").classList.add("opacity-0");
+                    document.querySelector(".optelsom-right-img").classList.add("opacity-0");
+                }, 4000);
+                setTimeout(() => {
+                    document.querySelector(".optelsom-left-img").classList.remove("optelsom-left-img-animation");
+                    document.querySelector(".optelsom-right-img").classList.remove("optelsom-right-img-animation");
+                    document.querySelector(".optelsom-1").classList.remove("opacity-0");
+                }, 7000);
+                setTimeout(() => {
+                    document.querySelector(".plus-1").classList.remove("opacity-0");
+                }, 7500);
+                setTimeout(() => {
+                    document.querySelector(".optelsom-2").classList.remove("opacity-0");
+                }, 8000);
+                setTimeout(() => {
+                    document.querySelector(".plus-2").classList.remove("opacity-0");
+                }, 8500);
+                setTimeout(() => {
+                    document.querySelector(".optelsom-3").classList.remove("opacity-0");
+                }, 9000);
+                console.log("breakende functie");
+                counter++;
+            }
 }
 
 function afdelingenPage() {
-    if (counter == 0) {
+    if (counter === 0) {
         for (let i = 0; i < 30; i++) {
-            document.querySelector(".fists").innerHTML += '<img src="assets/img/fist.svg"' + 'class="fist-img opacity-0"' + ' id="fist-' + i + '"' + '>';
+            document.querySelector(".fists").innerHTML += '<img src="assets/img/Fist.svg"' + 'class="fist-img opacity-0"' + ' id="fist-' + i + '"' + '>';
         }
         setTimeout(() => {document.querySelector("#fist-0").classList.remove('opacity-0')}, 100);
         setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "1"}, 100);
@@ -471,5 +461,35 @@ function afdelingenPage() {
 function openAfdelingenText() {
     document.querySelector(".afdelingen-text-container").classList.toggle('opacity-0');
     document.querySelector("#fist-20").classList.toggle('fist-20-background');
+}
+
+function interview() {
+    console.log(counter);
+    if (counter === 0) {
+        var element = document.querySelector(".chat");
+        // element.scrollTop = element.scrollHeight;
+
+        document.querySelector("#vera-chat-1").classList.remove('opacity-0');
+        setTimeout(() => {
+            document.querySelector("#patricce-chat-1").classList.remove('opacity-0');
+        }, 1000);
+        setTimeout(() => {
+            document.querySelector("#patricce-chat-2").classList.remove('opacity-0');
+            // element.scrollTop = 20;
+        }, 2000);
+        setTimeout(() => {
+            document.querySelector("#patricce-chat-3").classList.remove('opacity-0');
+            element.scrollTo({top: 200, behavior: 'smooth'});
+        }, 5000);
+        setTimeout(() => {
+            document.querySelector("#vera-chat-2").classList.remove('opacity-0');
+        }, 6000);
+        setTimeout(() => {
+            document.querySelector("#patricce-chat-4").classList.remove('opacity-0');
+            element.scrollTo({top: 1000, behavior: 'smooth'});
+        }, 8000);
+        counter++;
+    }
+
 }
 
