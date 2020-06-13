@@ -904,6 +904,7 @@ section {
 .mid-section {
     transition: all 1s ease;
     margin-top: 4em;
+    max-width: 25vw;
 }
 
 .mid-section h2 {
@@ -941,4 +942,9 @@ section {
     background-color: white;
     padding: 1em 1em 1em 1em;
     box-shadow: 7px 7px 0px 0px rgba(248,239,42,1);
+}
+
+.samenvatting {
+    transition: all 1s ease;
+    color: white;
 }

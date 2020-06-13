@@ -451,7 +451,7 @@ function afdelingenPage() {
         setTimeout(() => {document.querySelector(".afdelingen-counter").innerHTML = "30"}, 4900);
 
 
-        setTimeout(() => {document.querySelector("#fist-20").classList.toggle('bounce-animation')}, 5500);
+        setTimeout(() => {document.querySelector("#fist-20").classList.add('bounce-animation')}, 5500);
 
         document.querySelector("#fist-20").addEventListener('click', openAfdelingenText);
         counter++;
@@ -479,15 +479,61 @@ function interview() {
         }, 2000);
         setTimeout(() => {
             document.querySelector("#patricce-chat-3").classList.remove('opacity-0');
-            element.scrollTo({top: 200, behavior: 'smooth'});
+            let height = document.querySelector("#patricce-chat-3").offsetHeight;
+            // element.scrollTo({top: 200, behavior: 'smooth'});
+            element.scrollTo({top: height, behavior: 'smooth'});
         }, 5000);
         setTimeout(() => {
             document.querySelector("#vera-chat-2").classList.remove('opacity-0');
         }, 6000);
         setTimeout(() => {
             document.querySelector("#patricce-chat-4").classList.remove('opacity-0');
-            element.scrollTo({top: 1000, behavior: 'smooth'});
+            let height = document.querySelector("#patricce-chat-4").offsetHeight;
+            let currentHeight = element.scrollTop;
+            element.scrollTo({top: currentHeight + height, behavior: 'smooth'});
+            // element.scrollTo({top: 400, behavior: 'smooth'});
         }, 8000);
+        setTimeout(() => {
+            document.querySelector("#vera-chat-3").classList.remove('opacity-0');
+        }, 9000);
+        setTimeout(() => {
+            document.querySelector("#patricce-chat-5").classList.remove('opacity-0');
+            let height = document.querySelector("#patricce-chat-5").offsetHeight;
+            let currentHeight = element.scrollTop;
+            element.scrollTo({top: currentHeight + height, behavior: 'smooth'});
+            // element.scrollTo({top: 600, behavior: 'smooth'});
+        }, 10000);
+        setTimeout(() => {
+            document.querySelector("#patricce-chat-6").classList.remove('opacity-0');
+            let height = document.querySelector("#patricce-chat-6").offsetHeight;
+            let currentHeight = element.scrollTop;
+            element.scrollTo({top: currentHeight + height, behavior: 'smooth'});
+            // element.scrollTo({top: 800, behavior: 'smooth'});
+        }, 11000);
+        setTimeout(() => {
+            document.querySelector("#patricce-chat-7").classList.remove('opacity-0');
+            let height = document.querySelector("#patricce-chat-7").offsetHeight;
+            let currentHeight = element.scrollTop;
+            element.scrollTo({top: currentHeight + height, behavior: 'smooth'});
+            // element.scrollTo({top: 1000, behavior: 'smooth'});
+        }, 12000);
+        setTimeout(() => {
+            document.querySelector("#patricce-chat-8").classList.remove('opacity-0');
+            let height = document.querySelector("#patricce-chat-8").offsetHeight;
+            let currentHeight = element.scrollTop;
+            element.scrollTo({top: currentHeight + height, behavior: 'smooth'});
+            // element.scrollTo({top: 1200, behavior: 'smooth'});
+        }, 13000);
+        setTimeout(() => {
+            document.querySelector("#patricce-chat-9").classList.remove('opacity-0');
+            let height = document.querySelector("#patricce-chat-9").offsetHeight;
+            let currentHeight = element.scrollTop;
+            element.scrollTo({top: currentHeight + height, behavior: 'smooth'});
+            // element.scrollTo({top: 1400, behavior: 'smooth'});
+        }, 14000);
+        setTimeout(() => {
+            document.querySelector("#samenvatting").classList.remove('opacity-0');
+        }, 15000);
         counter++;
     }
 
