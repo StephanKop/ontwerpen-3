@@ -191,7 +191,7 @@ section {
     color: black;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -20rem;
+    margin-top: -100vh;
     pointer-events: none;
 }
 
@@ -213,14 +213,17 @@ section {
 }
 
 .transcript {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    justify-content: center;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    width: 50vw;
+    /*justify-content: center;*/
     color: white;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 5em;
+    padding-top: 40vh;
+    overflow: scroll;
+    height: 80vh;
+    /*background-color: red;*/
 }
 
 .transcript p {
@@ -236,19 +239,76 @@ section {
 .transcript h2 {
     margin-left: auto;
     margin-right: auto;
-    margin-top: -30rem;
+    /*margin-top: -30rem;*/
     color: white;
     font-size: 5em;
     transition: all 1s ease;
+}
+
+.transcriptions2 {
+    margin-top: 2em;
+}
+
+#trans-28 {
+    color: red;
 }
 
 #trans-1:hover {
     color: #f8ef2a;
 }
 
+#trans-12 {
+    opacity: 0.95;
+}
+#trans-13 {
+    opacity: 0.95;
+}
+#trans-14 {
+    opacity: 0.90;
+}
+#trans-15 {
+    opacity: 0.90;
+}
+#trans-16 {
+    opacity: 0.85;
+}
+#trans-17 {
+    opacity: 0.85;
+}
+#trans-18 {
+    opacity: 0.80;
+}
+#trans-19 {
+    opacity: 0.80;
+}
+#trans-20 {
+    opacity: 0.75;
+}
+#trans-21 {
+    opacity: 0.75;
+}
+#trans-22 {
+    opacity: 0.70;
+}
+#trans-23 {
+    opacity: 0.70;
+}
+#trans-24 {
+    opacity: 0.65;
+}
+#trans-25 {
+    opacity: 0.65;
+}
+#trans-26 {
+    opacity: 0.60;
+}
+#trans-27 {
+    opacity: 0.60;
+}
+
 .opacity-0 {
     transition: all 3s ease;
-    opacity: 0;
+    opacity: 0 !important;
 }
 
 .hidden {
