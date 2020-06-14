@@ -200,7 +200,8 @@ section {
     object-fit: cover;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 200px;
+    margin-bottom: -1em;
+    /*border-radius: 200px;*/
 }
 
 .text-block {
@@ -572,6 +573,8 @@ section {
     overflow-y: hidden;
     overflow-x: hidden;
     margin-top: 10vh;
+    position: absolute;
+    width: 35vw;
 }
 
 .sticky-test::-webkit-scrollbar {
@@ -589,9 +592,14 @@ section {
 
 .sticky-img {
     height: 100vh;
-    position: sticky;
+    /*position: sticky;*/
     top: 0;
-    margin-top: 10vh;
+    /*margin-top: 10vh;*/
+}
+
+.sticky-img video {
+    width: 100vw;
+    height: 100vh;
 }
 
 .patrice-text{
@@ -613,6 +621,10 @@ section {
     font-family: Futura;
     cursor: pointer;
 }
+
+/*.mid-title p {*/
+/*    width: 32vw;*/
+/*}*/
 
 .mid-title:hover {
     background-color: #f8ef2a;

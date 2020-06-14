@@ -71,6 +71,9 @@ function scrollAnimation() {
         document.querySelector('.page-title').classList.add("title-animation");
         document.querySelector('.page-title').innerHTML = "Patrisse Cullors";
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
+        // player
+        let player =  document.getElementById('player');
+        player.pause();
     }
     else if (scroll >= viewportHeight * 6) {
         document.querySelector(".sticky-container").classList.remove("opacity-0");
@@ -82,6 +85,9 @@ function scrollAnimation() {
         //title
         document.querySelector('.page-title').classList.add("title-animation");
         document.querySelector('.page-title').innerHTML = "#BLM";
+        // player
+        let player =  document.getElementById('player');
+        player.play();
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
     }
     else if (scroll >= viewportHeight * 5) {
@@ -96,6 +102,9 @@ function scrollAnimation() {
         document.querySelector('.page-title').classList.add("title-animation");
         document.querySelector('.page-title').innerHTML = "#BLM";
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
+        // player
+        let player =  document.getElementById('player');
+        player.pause();
         //counter
         counter = 0;
     }
