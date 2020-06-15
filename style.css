@@ -105,7 +105,6 @@ section {
     margin-left: -2vw;
 }
 
-
 .landing {
     height: 100vh;
 }
@@ -484,7 +483,7 @@ section {
 .blm-container {
     transition: all 1s ease;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     /*margin-top: 10em;*/
     height: 100vh;
     /*font-family: "Georgia",serif;*/
@@ -528,6 +527,55 @@ section {
 
 .blm-text-block-4 {
     transition: all 9s ease;
+}
+
+.hover-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100vh;
+    width: 33.3%;
+    /*background-color: #f8ef2a;*/
+}
+
+.hover-container:nth-of-type(2) {
+    border-left: 20px solid #f8ef2a;
+    border-right: 20px solid #f8ef2a;
+}
+
+.hover-container img {
+    transition: all 0.5s ease;
+    height: 100vh;
+    position: absolute;
+    width: 33.3%;
+    object-fit: cover;
+    opacity: 1;
+    z-index: 0;
+}
+
+.hover-container img:hover {
+    /*z-index: -1;*/
+    /*opacity: 0.5;*/
+    filter: brightness(40%);
+    transform: scale(1.1);
+}
+
+.hover-container:hover p{
+    transition: all 0.5s ease;
+    opacity: 1;
+}
+
+.hover-container p {
+    transition: all 0.5s ease;
+    color: white;
+    padding: 1em;
+    /*width: 33.3%;*/
+    z-index: 1;
+    opacity: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50%;
+    pointer-events: none;
 }
 
 .visible-text {
@@ -582,6 +630,23 @@ section {
 }
 
 .sticky-text p {
+    margin: 0em 5em 2em 7em;
+    /*padding: 1em;*/
+}
+
+#samengevat-button {
+    width: 5.5em;
+    transition: all 0.5s ease;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+}
+
+#samengevat-button:hover {
+    border-bottom: 3px solid #f8ef2a;
+}
+
+.sticky-text p:nth-of-type(2) {
+    transition: all 1s ease;
     margin-bottom: 20em;
     background-color: white;
     color: black;
@@ -600,6 +665,8 @@ section {
 .sticky-img video {
     width: 100vw;
     height: 100vh;
+    object-fit: cover;
+    pointer-events: none;
 }
 
 .patrice-text{
@@ -674,8 +741,14 @@ section {
 
 .love-child-container {
     display: flex;
-    flex-direction: row;
-    margin-left: 5em;
+    flex-direction: column;
+    /*margin-left: 5em;*/
+    width: 100vw;
+    height: 100vh;
+    transition: all 1s ease;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .love-child-container p {
@@ -695,19 +768,23 @@ section {
 }
 
 .love-child-bottom-container {
+    margin-top: 5em;
     display: flex;
     flex-direction: column;
 }
 
 .love-child-bottom-container p {
     margin-left: auto;
-    margin-right: auto;
+    width: 27.5em;
+    margin-right: 1.5em;
+    /*margin-right: auto;*/
 }
 
 .love-child-bottom-row-img {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    margin-left: auto;
+    /*justify-content: center;*/
 }
 
 .love-child-bottom-row-img img {
@@ -793,6 +870,11 @@ section {
     margin-left: -2em;
     margin-right: -2em;
     z-index: 50;
+    cursor: pointer;
+}
+
+#leader-3:hover {
+    filter: sepia(100%);
 }
 
 #leader-4 {
@@ -986,6 +1068,7 @@ section {
     border: 5px solid #f8ef2a;
     padding: 1em 1em 1em 1em;
     cursor: pointer;
+    text-align: center;
 }
 
 .mid-section h2:hover {

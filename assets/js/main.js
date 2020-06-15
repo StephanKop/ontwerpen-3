@@ -190,7 +190,7 @@ function riotImages() {
 };
 
 window.onload = function(){
-    document.getElementById("blm-logo").addEventListener("click", blmLogo);
+    // document.getElementById("blm-logo").addEventListener("click", blmLogo);
     document.querySelector(".mid-title").addEventListener("click", patriceText);
     document.querySelector(".arrow-container-left").addEventListener("click", scrollOne);
     document.getElementById("aa").addEventListener("click", addAA);
@@ -199,6 +199,7 @@ window.onload = function(){
     document.getElementById("leader-3").addEventListener("click", addLeaders);
     document.querySelector(".transcript").addEventListener("click", transcriptFloyd);
     document.querySelector("#start-gesprek").addEventListener("click", interview);
+    document.querySelector("#samengevat-button").addEventListener("click", videoSamenvatting);
 
     //Hamburger menu links
     document.getElementById("home").addEventListener("click", scrollHome);
@@ -211,7 +212,7 @@ window.onload = function(){
     document.getElementById("organisaties").addEventListener("click", scrollOrganisaties);
     document.getElementById("leiders").addEventListener("click", scrollLeiders);
     document.getElementById("afdelingen").addEventListener("click", scrollAfdelingen);
-    document.getElementById("afdelingen").addEventListener("click", scrollGesprek);
+    document.getElementById("gesprek").addEventListener("click", scrollGesprek);
 
 
     riotImages();
@@ -291,14 +292,17 @@ function patriceText() {
 
 function addAA() {
     document.getElementById('explanation').innerHTML = 'De anti-apartheidsbeweging was een internationale sociale beweging die zich keerde tegen de apartheid in Zuid-Afrika met name in de periode tussen ongeveer 1960 en 1994.';
+    document.querySelector('.love-child-container').style.backgroundImage = "url('assets/img/anti-apartheid.jpeg')";
 }
 
 function addFem() {
     document.getElementById('explanation').innerHTML = 'De Verenigde Staten in de woelige jaren zeventig. Een aantal vrouwen binnen de Afro-Amerikaanse bevrijdingsbeweging is al jaren ontevreden met de rol die hen is toegewezen. Ze voelen zich genegeerd door hun mannelijke strijdgenoten en gediscrimineerd door de vrouwonvriendelijke mentaliteit en rolverdelingen die er heersen.';
+    document.querySelector('.love-child-container').style.backgroundImage = "url('assets/img/fem-protest.jpeg')";
 }
 
 function addSncc() {
     document.getElementById('explanation').innerHTML = 'De Student Nonviolent Coordinating Committee (SNCC) was één der organisaties actief in de Afro-Amerikaanse Burgerrechtenbeweging (African-American Civil Rights Movement). De SNCC ontstond vanuit een aantal studentenbijeenkomsten onder leiding van Ella Baker in april 1960 aan de Shaw University in Raleigh, North Carolina.';
+    document.querySelector('.love-child-container').style.backgroundImage = "url('assets/img/sncc-background.jpg')";
 }
 
 function addLeaders() {
@@ -530,6 +534,10 @@ function afdelingenPage() {
         document.querySelector("#fist-20").addEventListener('click', openAfdelingenText);
         counter++;
     }
+}
+
+function videoSamenvatting() {
+    document.querySelector("#samenvatting-video").classList.toggle('opacity-0');
 }
 
 function openAfdelingenText() {
