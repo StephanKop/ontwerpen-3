@@ -120,8 +120,12 @@ function scrollAnimation() {
         document.querySelector('.page-title').classList.add("title-animation");
         document.querySelector('.page-title').innerHTML = "De optelsom";
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
+        //counter
+        counter++;
     }
     else if (scroll >= viewportHeight * 3) {
+        riotImages();
+
         document.querySelector(".riot").classList.remove("opacity-0");
         document.querySelector(".p-1").classList.add("opacity-0");
         document.querySelector(".optelsom-container").classList.add("opacity-0");
@@ -151,6 +155,8 @@ function scrollAnimation() {
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
         // transcriptFloyd();
         addFirstTranscriptLine();
+        //counter
+        counter++;
     }
     else if (scroll >= viewportHeight) {
         document.getElementById('p-1').classList.add("opacity-0");
@@ -178,16 +184,15 @@ function scrollAnimation() {
 }
 
 function riotImages() {
-    let BackgroundImg=["assets/img/riot.jpg",
-        "assets/img/riot2.jpg",
-        "assets/img/riot3.jpg"
-    ];
-    setInterval(changeImage, 5000);
-    function changeImage() {
-        let i = Math.floor((Math.random() * 3));
-        document.querySelector("#riot-img").src = BackgroundImg[i];
+    if (counter === 0) {
+            setTimeout(() => {  document.querySelector(".riot-intro").classList.add("opacity-0"); }, 4000);
+            setTimeout(() => {  document.querySelector("#riot-img").src = "assets/img/riot.jpg"; }, 5000);
+            setTimeout(() => {  document.querySelector(".riot-text").classList.remove("opacity-0"); }, 6000);
+            setTimeout(() => {  document.querySelector("#riot-img").src = "assets/img/riot2.jpg"; }, 11000);
+            setTimeout(() => {  document.querySelector("#riot-img").src = "assets/img/riot3.jpg"; }, 16000);
     }
-};
+    counter++;
+}
 
 window.onload = function(){
     // document.getElementById("blm-logo").addEventListener("click", blmLogo);
@@ -215,7 +220,7 @@ window.onload = function(){
     document.getElementById("gesprek").addEventListener("click", scrollGesprek);
 
 
-    riotImages();
+    // riotImages();
 };
 
 function blmLogo() {
