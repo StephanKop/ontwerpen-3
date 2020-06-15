@@ -38,9 +38,7 @@ function scrollAnimation() {
     else if (scroll >= viewportHeight * 9) {
         //hide
         document.querySelector('.afdelingen-container').classList.add("opacity-0");
-        for (let i = 0; i < 30; i++) {
-            document.querySelector('#fist-' + i).classList.add("opacity-0");
-        }
+        addLeaders();
         //hamburger
         document.querySelector('.hamburger-menu').classList.remove("opacity-0");
         //arrow
@@ -51,6 +49,10 @@ function scrollAnimation() {
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
         //counter
         counter = 0;
+
+        for (let i = 0; i < 30; i++) {
+            document.querySelector('#fist-' + i).classList.add("opacity-0");
+        }
     }
     else if (scroll >= viewportHeight * 8) {
         //hamburger
@@ -61,6 +63,8 @@ function scrollAnimation() {
         document.querySelector('.page-title').classList.add("title-animation");
         document.querySelector('.page-title').innerHTML = "Ondersteunende organisaties";
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
+        //counter
+        counter = 0;
     }
     else if (scroll >= viewportHeight * 7) {
         //hamburger
@@ -154,7 +158,8 @@ function scrollAnimation() {
         document.querySelector('.page-title').innerHTML = "George Floyd";
         setTimeout(function(){document.querySelector('.page-title').classList.remove('title-animation')},100);
         // transcriptFloyd();
-        addFirstTranscriptLine();
+        // addFirstTranscriptLine();
+        transcriptFloyd();
         //counter
         counter++;
     }
@@ -186,8 +191,9 @@ function scrollAnimation() {
 function riotImages() {
     if (counter === 0) {
             setTimeout(() => {  document.querySelector(".riot-intro").classList.add("opacity-0"); }, 4000);
+            setTimeout(() => {  document.querySelector("#riot-img").classList.add("riot-scroll"); }, 5000);
             setTimeout(() => {  document.querySelector("#riot-img").src = "assets/img/riot.jpg"; }, 5000);
-            setTimeout(() => {  document.querySelector(".riot-text").classList.remove("opacity-0"); }, 6000);
+            setTimeout(() => {  document.querySelector(".riot-text").classList.remove("opacity-0"); }, 7000);
             setTimeout(() => {  document.querySelector("#riot-img").src = "assets/img/riot2.jpg"; }, 11000);
             setTimeout(() => {  document.querySelector("#riot-img").src = "assets/img/riot3.jpg"; }, 16000);
     }
@@ -311,13 +317,22 @@ function addSncc() {
 }
 
 function addLeaders() {
-    setTimeout(() => {  document.querySelector("#leader-1").classList.toggle("opacity-0"); }, 1000);
-    // document.querySelector("#leader-1").classList.toggle("opacity-0");
-    document.querySelector("#leader-2").classList.toggle("opacity-0");
-    document.querySelector("#leader-4").classList.toggle("opacity-0");
-    // document.querySelector("#leader-5").classList.toggle("opacity-0");
-    setTimeout(() => {  document.querySelector("#leader-5").classList.toggle("opacity-0"); }, 1000);
-    setTimeout(() => {  document.querySelector("#leader-protest").classList.toggle("opacity-0"); }, 2000);
+    if (counter === 0) {
+        setTimeout(() => {
+            document.querySelector("#leader-1").classList.toggle("opacity-0");
+        }, 1000);
+        // document.querySelector("#leader-1").classList.toggle("opacity-0");
+        document.querySelector("#leader-2").classList.toggle("opacity-0");
+        document.querySelector("#leader-4").classList.toggle("opacity-0");
+        // document.querySelector("#leader-5").classList.toggle("opacity-0");
+        setTimeout(() => {
+            document.querySelector("#leader-5").classList.toggle("opacity-0");
+        }, 1000);
+        setTimeout(() => {
+            document.querySelector("#leader-protest").classList.toggle("opacity-0");
+        }, 2000);
+    }
+    counter++
 }
 
 function addFirstTranscriptLine() {
@@ -329,98 +344,201 @@ function transcriptFloyd() {
     let containerHeight = element.offsetHeight;
     let pHeight = document.querySelector("#trans-1").offsetHeight;
 
-    setTimeout(() => {  document.querySelector("#trans-1").classList.remove("opacity-0"); }, 100);
-    setTimeout(() => {  element.scrollTo({top: pHeight, behavior: 'smooth'}); }, 2000);
-    setTimeout(() => {  document.querySelector("#trans-2").classList.remove("opacity-0"); }, 2000);
-    setTimeout(() => {  element.scrollTo({top: pHeight * 2, behavior: 'smooth'}); }, 4000);
-    setTimeout(() => {  document.querySelector("#trans-3").classList.remove("opacity-0"); }, 4000);
-    setTimeout(() => {  element.scrollTo({top: pHeight * 3, behavior: 'smooth'}); }, 6000);
-    setTimeout(() => {  document.querySelector("#trans-4").classList.remove("opacity-0"); }, 6000);
-    setTimeout(() => {  element.scrollTo({top: pHeight * 4, behavior: 'smooth'}); }, 8000);
-    setTimeout(() => {  document.querySelector("#trans-5").classList.remove("opacity-0"); }, 8000);
-    setTimeout(() => {  element.scrollTo({top: pHeight * 5, behavior: 'smooth'}); }, 10000);
-    setTimeout(() => {  document.querySelector("#trans-6").classList.remove("opacity-0"); }, 10000);
-    setTimeout(() => {  element.scrollTo({top: pHeight * 6, behavior: 'smooth'}); }, 12000);
-    setTimeout(() => {  document.querySelector("#trans-7").classList.remove("opacity-0"); }, 12000);
-    setTimeout(() => {  element.scrollTo({top: pHeight * 7, behavior: 'smooth'}); }, 14000);
-    setTimeout(() => {  document.querySelector("#trans-8").classList.remove("opacity-0"); }, 14000);
-    setTimeout(() => {  element.scrollTo({top: pHeight * 8, behavior: 'smooth'}); }, 16000);
-    setTimeout(() => {  document.querySelector("#trans-9").classList.remove("opacity-0"); }, 16000);
-    setTimeout(() => {  element.scrollTo({top: pHeight * 9, behavior: 'smooth'}); }, 18000);
-    setTimeout(() => {  document.querySelector("#trans-10").classList.remove("opacity-0"); }, 18000);
-    setTimeout(() => {  element.scrollTo({top: pHeight * 10, behavior: 'smooth'}); }, 20000);
-    setTimeout(() => {  document.querySelector("#trans-11").classList.remove("opacity-0"); }, 20000);
-    // setTimeout(() => {  element.scrollTo({top: containerHeight, behavior: 'smooth'}); }, 21000);
-    setTimeout(() => {  element.scrollTo({top: pHeight * 14, behavior: 'smooth'}); }, 22000);
-    setTimeout(() => {  document.querySelector("#trans-12").classList.remove("opacity-0"); }, 22000);
-    setTimeout(() => {  document.querySelector("#trans-13").classList.remove("opacity-0"); }, 22500);
-    setTimeout(() => {  element.scrollTo({top: pHeight * 18, behavior: 'smooth'}); }, 23500);
-    setTimeout(() => {  document.querySelector("#trans-14").classList.remove("opacity-0"); }, 23500);
-    setTimeout(() => {  document.querySelector("#trans-15").classList.remove("opacity-0"); }, 24250);
-    setTimeout(() => {  element.scrollTo({top: pHeight * 22, behavior: 'smooth'}); }, 25250);
-    setTimeout(() => {  document.querySelector("#trans-16").classList.remove("opacity-0"); }, 25250);
-    setTimeout(() => {  document.querySelector("#trans-17").classList.remove("opacity-0"); }, 26250);
-    setTimeout(() => {  element.scrollTo({top: pHeight * 26, behavior: 'smooth'}); }, 27250);
-    setTimeout(() => {  document.querySelector("#trans-18").classList.remove("opacity-0"); }, 27250);
-    setTimeout(() => {  document.querySelector("#trans-19").classList.remove("opacity-0"); }, 28500);
-    setTimeout(() => {  element.scrollTo({top: pHeight * 30, behavior: 'smooth'}); }, 29500);
-    setTimeout(() => {  document.querySelector("#trans-20").classList.remove("opacity-0"); }, 29500);
-    setTimeout(() => {  document.querySelector("#trans-21").classList.remove("opacity-0"); }, 31250);
-    setTimeout(() => {  element.scrollTo({top: pHeight * 34, behavior: 'smooth'}); }, 32250);
-    setTimeout(() => {  document.querySelector("#trans-22").classList.remove("opacity-0"); }, 32250);
-    setTimeout(() => {  document.querySelector("#trans-23").classList.remove("opacity-0"); }, 34250);
-    setTimeout(() => {  element.scrollTo({top: pHeight * 38, behavior: 'smooth'}); }, 35250);
-    setTimeout(() => {  document.querySelector("#trans-24").classList.remove("opacity-0"); }, 35250);
-    setTimeout(() => {  document.querySelector("#trans-25").classList.remove("opacity-0"); }, 37500);
-    setTimeout(() => {  element.scrollTo({top: pHeight * 42, behavior: 'smooth'}); }, 38500);
-    setTimeout(() => {  document.querySelector("#trans-26").classList.remove("opacity-0"); }, 38500);
-    setTimeout(() => {  document.querySelector("#trans-27").classList.remove("opacity-0"); }, 41000);
-    setTimeout(() => {  element.scrollTo({top: pHeight * 60, behavior: 'smooth'}); }, 42000);
-    setTimeout(() => {  document.querySelector("#trans-28").classList.remove("opacity-0"); }, 42000);
-    setTimeout(() => {  document.querySelector("#trans-29").classList.remove("opacity-0"); }, 44000);
+    if (counter === 0) {
+        setTimeout(() => {
+            document.querySelector("#trans-1").classList.remove("opacity-0");
+        }, 100);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight, behavior: 'smooth'});
+        }, 2000);
+        setTimeout(() => {
+            document.querySelector("#trans-2").classList.remove("opacity-0");
+        }, 2000);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight * 2, behavior: 'smooth'});
+        }, 4000);
+        setTimeout(() => {
+            document.querySelector("#trans-3").classList.remove("opacity-0");
+        }, 4000);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight * 3, behavior: 'smooth'});
+        }, 6000);
+        setTimeout(() => {
+            document.querySelector("#trans-4").classList.remove("opacity-0");
+        }, 6000);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight * 4, behavior: 'smooth'});
+        }, 8000);
+        setTimeout(() => {
+            document.querySelector("#trans-5").classList.remove("opacity-0");
+        }, 8000);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight * 5, behavior: 'smooth'});
+        }, 10000);
+        setTimeout(() => {
+            document.querySelector("#trans-6").classList.remove("opacity-0");
+        }, 10000);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight * 6, behavior: 'smooth'});
+        }, 12000);
+        setTimeout(() => {
+            document.querySelector("#trans-7").classList.remove("opacity-0");
+        }, 12000);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight * 7, behavior: 'smooth'});
+        }, 14000);
+        setTimeout(() => {
+            document.querySelector("#trans-8").classList.remove("opacity-0");
+        }, 14000);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight * 8, behavior: 'smooth'});
+        }, 16000);
+        setTimeout(() => {
+            document.querySelector("#trans-9").classList.remove("opacity-0");
+        }, 16000);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight * 9, behavior: 'smooth'});
+        }, 18000);
+        setTimeout(() => {
+            document.querySelector("#trans-10").classList.remove("opacity-0");
+        }, 18000);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight * 10, behavior: 'smooth'});
+        }, 20000);
+        setTimeout(() => {
+            document.querySelector("#trans-11").classList.remove("opacity-0");
+        }, 20000);
+        // setTimeout(() => {  element.scrollTo({top: containerHeight, behavior: 'smooth'}); }, 21000);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight * 14, behavior: 'smooth'});
+        }, 22000);
+        setTimeout(() => {
+            document.querySelector("#trans-12").classList.remove("opacity-0");
+        }, 22000);
+        setTimeout(() => {
+            document.querySelector("#trans-13").classList.remove("opacity-0");
+        }, 22500);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight * 18, behavior: 'smooth'});
+        }, 23500);
+        setTimeout(() => {
+            document.querySelector("#trans-14").classList.remove("opacity-0");
+        }, 23500);
+        setTimeout(() => {
+            document.querySelector("#trans-15").classList.remove("opacity-0");
+        }, 24250);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight * 22, behavior: 'smooth'});
+        }, 25250);
+        setTimeout(() => {
+            document.querySelector("#trans-16").classList.remove("opacity-0");
+        }, 25250);
+        setTimeout(() => {
+            document.querySelector("#trans-17").classList.remove("opacity-0");
+        }, 26250);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight * 26, behavior: 'smooth'});
+        }, 27250);
+        setTimeout(() => {
+            document.querySelector("#trans-18").classList.remove("opacity-0");
+        }, 27250);
+        setTimeout(() => {
+            document.querySelector("#trans-19").classList.remove("opacity-0");
+        }, 28500);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight * 30, behavior: 'smooth'});
+        }, 29500);
+        setTimeout(() => {
+            document.querySelector("#trans-20").classList.remove("opacity-0");
+        }, 29500);
+        setTimeout(() => {
+            document.querySelector("#trans-21").classList.remove("opacity-0");
+        }, 31250);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight * 34, behavior: 'smooth'});
+        }, 32250);
+        setTimeout(() => {
+            document.querySelector("#trans-22").classList.remove("opacity-0");
+        }, 32250);
+        setTimeout(() => {
+            document.querySelector("#trans-23").classList.remove("opacity-0");
+        }, 34250);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight * 38, behavior: 'smooth'});
+        }, 35250);
+        setTimeout(() => {
+            document.querySelector("#trans-24").classList.remove("opacity-0");
+        }, 35250);
+        setTimeout(() => {
+            document.querySelector("#trans-25").classList.remove("opacity-0");
+        }, 37500);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight * 42, behavior: 'smooth'});
+        }, 38500);
+        setTimeout(() => {
+            document.querySelector("#trans-26").classList.remove("opacity-0");
+        }, 38500);
+        setTimeout(() => {
+            document.querySelector("#trans-27").classList.remove("opacity-0");
+        }, 41000);
+        setTimeout(() => {
+            element.scrollTo({top: pHeight * 60, behavior: 'smooth'});
+        }, 42000);
+        setTimeout(() => {
+            document.querySelector("#trans-28").classList.remove("opacity-0");
+        }, 42000);
+        setTimeout(() => {
+            document.querySelector("#trans-29").classList.remove("opacity-0");
+        }, 44000);
 
-    // setTimeout(() => {  document.querySelector("#trans-28").classList.remove("opacity-0"); }, 42000);
-    // setTimeout(() => {  document.querySelector("#trans-29").classList.remove("opacity-0"); }, 44750);
-    // setTimeout(() => {  document.querySelector(".floyd-overleed").classList.remove("opacity-0"); }, 26000);
+        // setTimeout(() => {  document.querySelector("#trans-28").classList.remove("opacity-0"); }, 42000);
+        // setTimeout(() => {  document.querySelector("#trans-29").classList.remove("opacity-0"); }, 44750);
+        // setTimeout(() => {  document.querySelector(".floyd-overleed").classList.remove("opacity-0"); }, 26000);
 
-    setTimeout(() => {
-        document.querySelector("#trans-1").classList.toggle("opacity-0");
-        document.querySelector("#trans-2").classList.toggle("opacity-0");
-        document.querySelector("#trans-3").classList.toggle("opacity-0");
-        document.querySelector("#trans-4").classList.toggle("opacity-0");
-        document.querySelector("#trans-5").classList.toggle("opacity-0");
-        document.querySelector("#trans-6").classList.toggle("opacity-0");
-        document.querySelector("#trans-7").classList.toggle("opacity-0");
-        document.querySelector("#trans-8").classList.toggle("opacity-0");
-        document.querySelector("#trans-9").classList.toggle("opacity-0");
-        document.querySelector("#trans-10").classList.toggle("opacity-0");
-        document.querySelector("#trans-11").classList.toggle("opacity-0");
-        document.querySelector("#trans-12").classList.toggle("opacity-0");
-        document.querySelector("#trans-13").classList.toggle("opacity-0");
-        document.querySelector("#trans-14").classList.toggle("opacity-0");
-        document.querySelector("#trans-15").classList.toggle("opacity-0");
-        document.querySelector("#trans-16").classList.toggle("opacity-0");
-        document.querySelector("#trans-17").classList.toggle("opacity-0");
-        document.querySelector("#trans-18").classList.toggle("opacity-0");
-        document.querySelector("#trans-19").classList.toggle("opacity-0");
-        document.querySelector("#trans-20").classList.toggle("opacity-0");
-        document.querySelector("#trans-21").classList.toggle("opacity-0");
-        document.querySelector("#trans-22").classList.toggle("opacity-0");
-        document.querySelector("#trans-23").classList.toggle("opacity-0");
-        document.querySelector("#trans-24").classList.toggle("opacity-0");
-        document.querySelector("#trans-25").classList.toggle("opacity-0");
-        document.querySelector("#trans-26").classList.toggle("opacity-0");
-        document.querySelector("#trans-27").classList.toggle("opacity-0");
-    }, 46000);
+        setTimeout(() => {
+            document.querySelector("#trans-1").classList.toggle("opacity-0");
+            document.querySelector("#trans-2").classList.toggle("opacity-0");
+            document.querySelector("#trans-3").classList.toggle("opacity-0");
+            document.querySelector("#trans-4").classList.toggle("opacity-0");
+            document.querySelector("#trans-5").classList.toggle("opacity-0");
+            document.querySelector("#trans-6").classList.toggle("opacity-0");
+            document.querySelector("#trans-7").classList.toggle("opacity-0");
+            document.querySelector("#trans-8").classList.toggle("opacity-0");
+            document.querySelector("#trans-9").classList.toggle("opacity-0");
+            document.querySelector("#trans-10").classList.toggle("opacity-0");
+            document.querySelector("#trans-11").classList.toggle("opacity-0");
+            document.querySelector("#trans-12").classList.toggle("opacity-0");
+            document.querySelector("#trans-13").classList.toggle("opacity-0");
+            document.querySelector("#trans-14").classList.toggle("opacity-0");
+            document.querySelector("#trans-15").classList.toggle("opacity-0");
+            document.querySelector("#trans-16").classList.toggle("opacity-0");
+            document.querySelector("#trans-17").classList.toggle("opacity-0");
+            document.querySelector("#trans-18").classList.toggle("opacity-0");
+            document.querySelector("#trans-19").classList.toggle("opacity-0");
+            document.querySelector("#trans-20").classList.toggle("opacity-0");
+            document.querySelector("#trans-21").classList.toggle("opacity-0");
+            document.querySelector("#trans-22").classList.toggle("opacity-0");
+            document.querySelector("#trans-23").classList.toggle("opacity-0");
+            document.querySelector("#trans-24").classList.toggle("opacity-0");
+            document.querySelector("#trans-25").classList.toggle("opacity-0");
+            document.querySelector("#trans-26").classList.toggle("opacity-0");
+            document.querySelector("#trans-27").classList.toggle("opacity-0");
+        }, 46000);
 
-    setTimeout(() => {
-        document.querySelector("#trans-28").classList.toggle("opacity-0");
-        document.querySelector("#trans-29").classList.toggle("opacity-0");
-    }, 48000);
+        setTimeout(() => {
+            document.querySelector("#trans-28").classList.toggle("opacity-0");
+            document.querySelector("#trans-29").classList.toggle("opacity-0");
+        }, 48000);
 
-    // setTimeout(() => {  document.querySelector(".floyd-overleed").classList.toggle("opacity-0"); }, 28000);
-    setTimeout(function(){document.getElementById('p-1').classList.remove("opacity-0");},50000);
-    setTimeout(function(){document.getElementById('p-1').classList.add("smoothUpTransition");},50000);
+        // setTimeout(() => {  document.querySelector(".floyd-overleed").classList.toggle("opacity-0"); }, 28000);
+        setTimeout(function () {
+            document.getElementById('p-1').classList.remove("opacity-0");
+        }, 50000);
+        setTimeout(function () {
+            document.getElementById('p-1').classList.add("smoothUpTransition");
+        }, 50000);
+    }
+    counter++
 }
 
 let counter = 0;
