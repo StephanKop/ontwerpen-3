@@ -1176,3 +1176,49 @@ section {
     transition: all 1s ease;
     color: white;
 }
+
+/*credits*/
+
+.credit-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: black;
+}
+
+.credit {
+    display: flex;
+    flex-direction: row;
+    width: 40vw;
+    margin: 2em;
+}
+
+.credit a {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+}
+
+.credit a:hover {
+    background-color: #f8ef2a;
+}
+
+.credit a:hover p {
+    color: black;
+}
+
+.credit a img {
+    width: 5em;
+    height: 5em;
+    object-fit: cover;
+    margin-right: 1em;
+}
+
+.credit a p {
+    color: white;
+    padding-right: 1em;
+}
+
+
+

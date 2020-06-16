@@ -152,6 +152,21 @@
     font-size: 22px;
     font-family: Futura;
     cursor: pointer;
+    text-decoration: none;
+}
+
+#menu li:last-of-type {
+    padding-top: 2em;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: black;
+}
+
+#menu li a:hover {
+    text-decoration: none;
+    color: orangered;
 }
 
 /*
