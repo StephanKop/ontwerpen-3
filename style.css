@@ -26,6 +26,11 @@ section {
     src: url("assets/fonts/Futura Book font.ttf");
 }
 
+@font-face {
+    font-family: Futura-bold;
+    src: url("assets/fonts/Futura Bold font.ttf");
+}
+
 .cover {
     width: 100vw;
     /*height: 100vh;*/
@@ -328,6 +333,7 @@ section {
     transition: 6s ease;
     opacity: 1 !important;
     color: #f8ef2a !important;
+    font-family: Futura-bold;
 }
 
 .floyd {
@@ -581,8 +587,8 @@ section {
 
 .hover-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    /*justify-content: space-between;*/
     height: 100vh;
     width: 33.3%;
     /*background-color: #f8ef2a;*/
@@ -615,6 +621,11 @@ section {
     opacity: 1;
 }
 
+.hover-container:hover h2{
+    transition: all 0.5s ease;
+    opacity: 1;
+}
+
 .hover-container p {
     transition: all 0.5s ease;
     color: white;
@@ -624,8 +635,19 @@ section {
     opacity: 0;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50%;
     pointer-events: none;
+}
+
+.hover-container h2 {
+    color: white;
+    margin-top: 50%;
+    z-index: 1;
+    opacity: 0;
+    padding: 0.6em;
+    pointer-events: none;
+    text-align: left;
+    margin-bottom: -1em;
+    font-family: Futura-bold;
 }
 
 .visible-text {
@@ -885,6 +907,7 @@ section {
 
 .leaders-images img {
     width: 10em;
+    height: 10em;
     object-fit: cover;
     transition: all 2s ease;
 }
